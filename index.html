@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wesprzyj Kościół Słowo Wiary</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f5f1;color:#222}
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px}
+.card{width:100%;max-width:560px;background:#fff;border-radius:24px;box-shadow:0 14px 45px rgba(0,0,0,.10);overflow:hidden}
+.hero{padding:42px 32px 28px;text-align:center;background:linear-gradient(135deg,#1f2937,#374151);color:#fff}
+.logo{width:120px;height:120px;margin:0 auto 18px;border-radius:50%;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover;display:block}
+h1{margin:0 0 10px;font-size:30px;line-height:1.15}
+.hero p{margin:0;opacity:.88;font-size:16px;line-height:1.5}
+.form{padding:30px 32px 34px}
+.label{display:block;font-size:14px;font-weight:700;margin:0 0 12px;text-align:center}
+.amounts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.amounts a{
+  display:flex;align-items:center;justify-content:center;
+  padding:18px 12px;border-radius:12px;font-size:20px;font-weight:800;
+  text-decoration:none;color:#fff;background:#111827;transition:opacity .15s;
+}
+.amounts a:hover{opacity:.9}
+.dropdown-wrap{margin-bottom:8px}
+select{
+  width:100%;padding:16px;border:1px solid #d6d3d1;border-radius:12px;
+  font-size:17px;font-weight:700;background:#fff;color:#111827;
+  cursor:pointer;outline:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+}
+select:focus{border-color:#374151;box-shadow:0 0 0 3px rgba(55,65,81,.10)}
+.note{margin:18px 0 0;font-size:12px;line-height:1.5;color:#6b7280;text-align:center}
+.links{text-align:center;margin-top:22px;font-size:12px}
+.links a{color:#4b5563;text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+    <section class="hero">
+      <div class="logo"><img src="https://slowowiary-gdansk.pl/wp-content/uploads/2017/03/Projekt-bez-nazwy-5.png" alt="Słowo Wiary Gdańsk"></div>
+      <h1>Wesprzyj Kościół Słowo Wiary</h1>
+      <p>Dziękujemy za Twoją dobrowolną darowiznę na działalność naszego Kościoła.</p>
+    </section>
+    <section class="form">
+      <label class="label">Wybierz kwotę darowizny (PLN)</label>
+
+      <div class="amounts">
+        <a href="https://secure.tpay.com/?h=5b9e878b8663a4f1d332d045e14f3dbd5e75921f">20 zł</a>
+        <a href="https://secure.tpay.com/?h=6b9654c62e796b8d2ccc1b5a8d1b57b15e079f88">50 zł</a>
+        <a href="https://secure.tpay.com/?h=8fd5185e5de35b514afc94558eb878f9e5abcd57">100 zł</a>
+        <a href="https://secure.tpay.com/?h=6e244b7a531054e21e9c8cd71177eeb27d250cfc">200 zł</a>
+      </div>
+
+      <div class="dropdown-wrap">
+        <select id="amountSelect">
+          <option value="" selected disabled>Wybierz sumę</option>
+          <option value="10">10 zł</option>
+          <option value="20">20 zł</option>
+          <option value="30">30 zł</option>
+          <option value="40">40 zł</option>
+          <option value="50">50 zł</option>
+          <option value="60">60 zł</option>
+          <option value="70">70 zł</option>
+          <option value="80">80 zł</option>
+          <option value="90">90 zł</option>
+          <option value="100">100 zł</option>
+          <option value="110">110 zł</option>
+          <option value="120">120 zł</option>
+          <option value="130">130 zł</option>
+          <option value="140">140 zł</option>
+          <option value="150">150 zł</option>
+          <option value="200">200 zł</option>
+          <option value="250">250 zł</option>
+          <option value="300">300 zł</option>
+          <option value="400">400 zł</option>
+          <option value="500">500 zł</option>
+        </select>
+      </div>
+
+      <p class="note">Po wyborze kwoty nastąpi bezpieczne przekierowanie do systemu płatności Tpay, gdzie wybierzesz dostępną metodę płatności.</p>
+
+      <div class="links">
+        <a href="/polityka-prywatnosci">Polityka prywatności</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  const paymentLinks = {
+    10:  "https://secure.tpay.com/?h=f21d8771bb322820f55ba8300933fa39a527c527",
+    20:  "https://secure.tpay.com/?h=5b9e878b8663a4f1d332d045e14f3dbd5e75921f",
+    30:  "https://secure.tpay.com/?h=311c2d57ab70cc0c5c29a5018e8f27a74aa180f7",
+    40:  "https://secure.tpay.com/?h=d9daed0c95e0605921e7b5731ace2ce9d7d0b79a",
+    50:  "https://secure.tpay.com/?h=6b9654c62e796b8d2ccc1b5a8d1b57b15e079f88",
+    60:  "https://secure.tpay.com/?h=386fb22b79a76aa874345997c997f4489da23cb7",
+    70:  "https://secure.tpay.com/?h=b1a1cbf9ff0d567f8bb61f93fc2dc7f1c76d8bed",
+    80:  "https://secure.tpay.com/?h=0d30cd2cbd2c0ff5af69b7402f587bc8ad5c6945",
+    90:  "https://secure.tpay.com/?h=819b34231be9b164efeb0a9bad6bf95e26c4eca0",
+    100: "https://secure.tpay.com/?h=8fd5185e5de35b514afc94558eb878f9e5abcd57",
+    110: "https://secure.tpay.com/?h=63826c6a895e451398880cc4823bddd59409fe9c",
+    120: "https://secure.tpay.com/?h=2ccfd02a2adbd8aa664f6aa49d8240ef2ae63bbc",
+    130: "https://secure.tpay.com/?h=9560212288c3f79a154279ce6cef46a2b270a0d5",
+    140: "https://secure.tpay.com/?h=ce38f5988d82cb4f15cdee0ffdacfd6c1e2e0835",
+    150: "https://secure.tpay.com/?h=a4178ce58e74bcb53d7fd91ff64680287571cc32",
+    200: "https://secure.tpay.com/?h=6e244b7a531054e21e9c8cd71177eeb27d250cfc",
+    250: "https://secure.tpay.com/?h=548c8bb1783b0ca9215fe9adc9970b926c69b872",
+    300: "https://secure.tpay.com/?h=d0d038512bbe3d3a431b811d441a65d611c11a56",
+    400: "https://secure.tpay.com/?h=be302485e57aef34e6fcaac4afbcb6191b018b4a",
+    500: "https://secure.tpay.com/?h=cfd77c44c088f570afd39f7be34cc5c5f31531e5"
+  };
+
+  const select = document.getElementById("amountSelect");
+
+  select.addEventListener("change", function () {
+    const amount = this.value;
+    if (!amount) return;
+
+    const message = "Czy na pewno chcesz przekazać darowiznę w wysokości " + amount + " zł?";
+    if (confirm(message)) {
+      const link = paymentLinks[amount];
+      if (link) {
+        window.location.href = link;
+      }
+    } else {
+      // Cofnij wybór, jeśli użytkownik anulował
+      this.value = "";
+    }
+  });
+</script>
+</body>
+</html>
